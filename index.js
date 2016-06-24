@@ -17,14 +17,15 @@ class AspectTransformer extends Transformer {
         const {
             aspect
         } = this.options;
-        
-        if (panto.util.isFunction(aspect)) {
-            aspect(file);
-        } else {
-            throw new Error(`AspectTransform error: "aspect" must be  function`);
-        }
-        
-        return new Promise.resolve(file);
+
+        return new Promise(resolve => {
+            if (panto.util.isFunction(aspect)) {
+                aspect(file);
+            } else {
+                throw new Error(`AspectTransform error: "aspect" must be a function`);
+            }
+            resolve(file);
+        });
     }
 }
 
