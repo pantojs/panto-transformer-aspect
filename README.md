@@ -6,9 +6,9 @@ Aspect transformer for panto.
 ```js
 panto.loadTransformer('aspect');
 
-panto.pick('**/*.js').pipe(panto.aspect({
+panto.pick('**/*.js').aspect({
     aspect: file => {}
-})).end();
+});
 ```
 
 ## options:
