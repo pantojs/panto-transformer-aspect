@@ -6,7 +6,7 @@
  * 2016-06-22[10:32:40]:revised
  *
  * @author yanni4night@gmail.com
- * @version 0.1.0
+ * @version 0.1.2
  * @since 0.1.0
  */
 'use strict';
@@ -19,7 +19,7 @@ class AspectTransformer extends Transformer {
         } = this.options;
 
         return new Promise(resolve => {
-            if (panto.util.isFunction(aspect)) {
+            if (panto._.isFunction(aspect)) {
                 aspect(file);
             } else {
                 throw new Error(`AspectTransform error: "aspect" must be a function`);
